@@ -1,2 +1,2 @@
 # IVFS
-Virtual File System written on C++
+Virtual File System written in C++
