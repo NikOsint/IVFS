@@ -1,5 +1,3 @@
 #include "file.h"
 
-namespace TestTask {
-
-}
+using namespace TestTask;

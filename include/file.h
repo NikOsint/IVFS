@@ -3,8 +3,16 @@
 
 namespace TestTask {
 
-  struct File {
+  enum Mode {
+    ReadOnly,
+    WriteOnly
+  };
 
+  struct File {
+  public:
+
+  private:
+    Mode mode;
   };
 
 } // namespace TestTask

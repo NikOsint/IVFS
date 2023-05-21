@@ -1,5 +1,3 @@
 #include "ivfs.h"
 
-namespace TestTask {
-
-}
+using namespace TestTask;
