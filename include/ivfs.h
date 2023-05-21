@@ -10,6 +10,10 @@ namespace TestTask {
 
   struct IVFS {
   public:
+
+    IVFS( const char *archive );
+    ~IVFS();
+
     /*
      * Открыть файл в readonly режиме.
      * Если нет такого файла или же он открыт во writeonly режиме - вернуть nullptr.
