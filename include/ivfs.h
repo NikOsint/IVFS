@@ -31,18 +31,23 @@ namespace TestTask {
      * Прочитать данные из файла.
      * Возвращаемое значение - сколько реально байт удалось прочитать.
      */
-    size_t Read( File *f, char *buff, size_t len );
+    size_t Read( File *f, char *buff, size_t len = 0 );
 
     /*
      * Записать данные в файл.
      * Возвращаемое значение - сколько реально байт удалось записать.
      */
-    size_t Write( File *f, char *buff, size_t len );
+    size_t Write( File *f, char *buff, size_t len = 0 );
 
     /*
      * Закрыть файл.
      */
     void Close( File *f );
+
+    File *OpenedReadonly( const char *filename );
+    File *OpenedWriteonly( const char *filename );
+
+    bool Valid() const;
 
   private:
 
