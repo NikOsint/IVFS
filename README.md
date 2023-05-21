@@ -6,9 +6,9 @@ It uses a ZIP archive to store files, so you can read and write multiple files w
 
 ## How it works
 
-[Poco::Zip](https://docs.pocoproject.org/current/Poco.Zip.html) is used for ZIP work.
+[Poco::Zip](https://docs.pocoproject.org/current/Poco.Zip.html) is used for ZIP manipulations.
 
-std::mutex is used for allowing multithreaded access.
+```std::mutex``` is used for allowing multithreaded access.
 
 ## How to build
 
@@ -50,7 +50,12 @@ The list of available commands is as follows:
 | ```create [filename]```       | Create/Open file in writeonly mode |
 | ```read [filename]```         | Read from a previously opened file |
 | ```write [filename] [data]``` | Write to a previously opened file  |
-| ```close [filename]```        | Close a previously opened file     |         
+| ```close [filename]```        | Close a previously opened file     |     
+| ```q```                       | Quit                               |
+
+> Typing data through console to write to a file is not very practical, so unit tests with real data are needed.
+> 
+> TIP: cover data in double quotes so that spaces do not act as delimeters.
 
 ## TODOs
 
