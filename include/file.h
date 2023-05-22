@@ -10,8 +10,19 @@ namespace TestTask {
 
   struct File {
   public:
+    File(const char *path, Mode mode);
+    ~File();
+
+    const char* getData() const;
+    void setData();
+
+    const char* getPath() const;
+
+    Mode getMode() const;
 
   private:
+    char *data;
+    char *path;
     Mode mode;
   };
 

@@ -8,7 +8,7 @@ It uses a ZIP archive to store files, so you can read and write multiple files w
 
 [Poco::Zip](https://docs.pocoproject.org/current/Poco.Zip.html) is used for ZIP manipulations.
 
-```std::mutex``` is used for allowing multithreaded access.
+```std::recursive_mutex``` is used for safe access from different threads.
 
 ## How to build
 
@@ -55,7 +55,7 @@ The list of available commands is as follows:
 
 > Typing data through console to write to a file is not very practical, so unit tests with real data are needed.
 > 
-> TIP: cover data in double quotes so that spaces do not act as delimeters.
+> TIP: cover data in double quotes so that spaces do not act as delimiters.
 
 ## TODOs
 
@@ -63,3 +63,5 @@ The list of available commands is as follows:
 - [ ] Implement connecting more than one ZIP archive
 - [ ] Implement in-memory filesystem to store temporary files
 - [ ] Rewrite to use another library so that there is no need to save and delete temporary files in native filesystem
+- [ ] Make different mutexes for different operations to improve performance
+- [ ] Implement safe and smart path resolving

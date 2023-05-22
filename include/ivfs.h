@@ -2,6 +2,10 @@
 #define IVFS_IVFS_H
 
 #include <cstddef>
+#include <mutex>
+#include <unordered_map>
+
+#include <Poco/Zip/ZipArchive.h>
 //#include <filesystem>
 
 #include "file.h"
@@ -44,13 +48,15 @@ namespace TestTask {
      */
     void Close( File *f );
 
-    File *OpenedReadonly( const char *filename );
-    File *OpenedWriteonly( const char *filename );
+    File *OpenedReadonly( const char *filename ) const;
+    File *OpenedWriteonly( const char *filename ) const;
 
     bool Valid() const;
 
   private:
-
+    //todo: filename / file stream / ?
+    mutable std::recursive_mutex lock;
+    std::unordered_map<std::string, File*> files;
   };
 
 } // namespace TestTask
